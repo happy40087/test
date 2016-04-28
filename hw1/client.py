@@ -109,8 +109,7 @@ while 1:
     AckData = clientSocket.recv(2048)
     if AckData[4:8]==TRANSACTION_ID:
         print("receive ACK message")
-        break
-'''
+
         print("OP: "+AckData[0].encode('hex'))
         print('HTYPE: '+AckData[1].encode('hex'))
         print('HLEN: '+AckData[2].encode('hex'))
@@ -134,7 +133,7 @@ while 1:
         print('Option(1): '+AckData[261:267].encode('hex'))  #Subnet Mask
         print('Option(6): '+AckData[267:273].encode('hex'))  #Domain Name Server
         print('Option(END): '+AckData[273].encode('hex'))
-'''
+        break
     
 
 clientSocket.close()
